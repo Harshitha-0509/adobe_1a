@@ -82,16 +82,12 @@ The system employs a multi-layered heading detection mechanism for accurate head
 
 ### Build the Docker Image
 ```bash
-docker build --platform linux/amd64 -t pdf-extractor:hackathon .
+docker build -t pdf-extractor .
 ```
 
 ### Run the Container
 ```bash
-docker run --rm \
--v $(pwd)/input:/app/input:ro \
--v $(pwd)/output:/app/output \
---network none \
-pdf-extractor:hackathon
+docker run --rm -v ${PWD}/input:/app/input -v ${PWD}/output:/app/output pdf-extractor     
 ```
 
 ## Input/Output Specification
